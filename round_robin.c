@@ -7,9 +7,10 @@ struct process{
 }p[10];
 
 void read(int n){
+printf("Enter process details ID AT BT \n");
 	for(int i=0;i<n;i++)
 	{
-		printf("Enter id,arrival time, and burst time of process %d\n",i+1);
+		printf("Process %d :\n",i+1);
 		scanf("%d%d%d",&p[i].id,&p[i].at,&p[i].bt);
 	}
 	for(int i=0;i<n;i++)
@@ -26,9 +27,9 @@ void sort(int n)
 		{
 			if(p[j].at>p[j+1].at)
 			{
-				struct process p1=p[j];
-				p[j]=p[j+1];
-				p[j+1]=p1;
+				struct process p1=p[i];
+				p[i]=p[i+1];
+				p[i+1]=p1;
 			}
 		}
 	}
@@ -84,9 +85,9 @@ void RRS(int n) {
 int main()
 {
 	int n,t;
-	printf("Enter the number of processes: ");
+	printf("Enter the number of processes: \n");
 	scanf("%d",&n);
-	printf("Enter the time quantum: ");
+	printf("Enter the time quantum: \n");
 	scanf("%d",&t);
 	tq=t;
 	read(n);
